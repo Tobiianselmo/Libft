@@ -13,42 +13,30 @@
 #include <string.h>
 #include <stdio.h>
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	dst_len;
-	size_t	src_len;
 	size_t	i;
-	size_t	a;
-	
-	dst_len = strlen(dst);
-	src_len = strlen(src);
+
 	i = 0;
-	a = 0;
-	while (src[a] != '\0')
+    if (dstsize > 0)
 	{
-		if (dstsize == '0')
+    	while (src[i] != '\0' && i < dstsize - 1)
 		{
-			return (src_len);
-		}
-		while (dstsize > (size_t)src[a])
-		{
-			dst[i] = src[a];
-			i++;
-			a++;
-		}
-		if (src[a] == '\0')
-		{
-			return (src_len + dst[i]);
-		}
-	}
-	return (0);
+        	dst[i] = src[i];
+        	i++;
+        }
+        dst[i] = '\0';
+    }
+    while (src[i] != '\0') {
+        i++;
+    }
+    return (i);
 }
 
-int	main()
-{
-	char	dst[] = "Hola";
-	char	src[] = "asasddsa";
-
-	printf("%zu\n", ft_strlcpy(dst, src, 1));
-	return (0);
+int main() {
+    char dst[] = "Hola";
+    const char src[] = "Buenos dias";
+	printf("%zu\n", ft_strlcpy(dst, src, 5));
+	printf("%s\n", dst);
+    return (0);
 }

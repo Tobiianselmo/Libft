@@ -10,4 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+
+#include <stdio.h>
+
+void *ft_memset(void *b, int c, size_t len) 
+{
+    char *p;
+	p = b;
+    while (len-- > 0) 
+	{
+    	*p++ = (char)c;
+    }
+    return (b);
+}
+
+int main()
+{
+	char cadena[] = "Hola, mundo!";
+	printf("Cadena original: %s\n", cadena);
+	printf("Cadena set: %p\n", ft_memset(cadena, '0', 3));
+	return (0);
+}
