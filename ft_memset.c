@@ -6,28 +6,33 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:16:08 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/11/30 11:32:01 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:04:09 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-#include <stdio.h>
-
-void *ft_memset(void *b, int c, size_t len) 
+void	*ft_memset(void *b, int c, size_t len)
 {
-    char *p;
+	size_t	i;
+	char	*p;
+
+	i = 0;
 	p = b;
-    while (len-- > 0) 
+	while (i < len)
 	{
-    	*p++ = (char)c;
-    }
-    return (b);
+		p[i] = (char)c;
+		i++;
+	}
+	return (b);
 }
 
-int main()
+/* int	main()
 {
-	char cadena[] = "Hola, mundo!";
-	printf("Cadena original: %s\n", cadena);
-	printf("Cadena set: %p\n", ft_memset(cadena, '0', 3));
+	char	s[20] = "";
+	int	c = '0';
+
+	printf("%p\n", ft_memset(s, c, 6));
+	printf("%s\n", s);
 	return (0);
-}
+} */

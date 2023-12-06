@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:15:48 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/11/30 11:31:42 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:37:38 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,24 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	size_t	needle_len;
 	size_t	i;
 	size_t	a;
 
+	needle_len = ft_strlen(needle);
 	i = 0;
 	a = 0;
-	while (haystack[i] != '\0')
+	if (needle[0] == '\0')
+		return ((char *)&haystack[0]);
+	while (haystack[i] != '\0' && i < len)
 	{
-		if (needle[0] == '\0')
-		{
-			return ((char *)&haystack[i]);
-		}
-		if (haystack[i] == needle[a])
-		{
-			i++;
+		a = 0;
+		while (haystack[i + a] == needle[a] && haystack[i + a] != '\0'
+			&& i + a < len)
 			a++;
-			if (needle[a] == '\0' || a == len)
-				return ((char *)&haystack[i - a]);
-		}
-		else
-		{
-			i++;
-			a = 0;
-		}
+		if (needle[a] == '\0')
+			return ((char *)&haystack[i]);
+		i++;
 	}
 	return (NULL);
 }
@@ -47,7 +42,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	const char	*needle;
 
 	haystack = "Hola como estas?";
-	needle = "cono";
-	printf("%s\n", ft_strnstr(haystack, needle, 2));
+	needle = "como";
+	printf("%s\n", ft_strnstr(haystack, needle, 10));
 	return (0);
 } */

@@ -6,50 +6,37 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:15:56 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/01 13:29:29 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:25:52 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	dst_len;
-	size_t	src_len;
 	size_t	i;
-	size_t	a;
-	
-	dst_len = ft_strlen(dst);
+	size_t	src_len;
+
 	src_len = ft_strlen(src);
 	i = 0;
-	a = 0;
-	while (src[a] != '\0')
+	if (dstsize == 0)
+		return (src_len);
+	while (src[i] != '\0' && i < dstsize - 1)
 	{
-		if (dstsize == '0')
-		{
-			return (src_len);
-		}
-		while (dstsize > (size_t)src[a])
-		{
-			dst[i] = src[a];
-			i++;
-			a++;
-		}
-		if (src[a] == '\0')
-		{
-			return (src_len + dst[i]);
-		}
+		dst[i] = src[i];
+		i++;
 	}
-	return (0);
+	dst[i] = '\0';
+	return (src_len);
 }
 
-int	main()
+/* int	main()
 {
-	char	dst[] = "Hola";
-	char	src[] = "asasddsa";
+	char	dst[] = "Holaaaaaaaaaaaa";
+	char	src[] = "Buen dia";
 
-	printf("%zu\n", ft_strlcpy(dst, src, 1));
+	printf("la primera palabra %s, la segunda es %s\n", dst, src);
+	printf("%zu\n", ft_strlcpy(dst, src, 6));
+	printf("la primera palabra %s, la segunda es %s\n", dst, src);
 	return (0);
-}
+} */

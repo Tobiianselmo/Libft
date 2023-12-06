@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:16:00 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/01 12:45:39 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:36:20 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 /* int	main()
 {
-	char	dst[] = "Hola como estan?";
+	char	dst[] = "Holaaa";
 	char	src[] = "bien";
 	
-	printf("%zu\n", ft_strlcat(dst, src, 1));
+	printf("%zu\n", ft_strlcat(dst, src, 6));
 	return (0);
 } */
