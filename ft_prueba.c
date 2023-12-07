@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:20:44 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/06 14:38:20 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/07 17:31:25 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,3 +177,17 @@ int main () {
    
    return(0);
 } */
+
+#include <stdio.h>
+#include <string.h>
+
+int main () {
+   const char src[50] = "a";
+   char dest[50];
+   strcpy(dest,"");
+   printf("Before memcpy dest = %s\n", dest);
+   memcpy(dest, src, strlen(src)+0);
+   printf("After memcpy dest = %s\n", dest);
+   
+   return(0);
+}
