@@ -6,13 +6,11 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:16:00 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/06 15:29:27 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:56:25 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

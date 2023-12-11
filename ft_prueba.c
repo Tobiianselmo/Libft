@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:20:44 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/07 17:31:25 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/11 17:17:23 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -178,7 +178,7 @@ int main () {
    return(0);
 } */
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <string.h>
 
 int main () {
@@ -190,4 +190,65 @@ int main () {
    printf("After memcpy dest = %s\n", dest);
    
    return(0);
+} */
+
+/* char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+    size_t	slen;
+    char	*sub;
+    size_t	i;
+
+    slen = ft_strlen(s);
+    if (slen < start)
+        return (NULL);
+    if (slen < start + len)
+        len = slen - start;
+    sub = (char *)malloc(sizeof(char) * (len + 1));
+    if (!sub)
+        return (NULL);
+    i = 0;
+    while (i < len)
+    {
+        sub[i] = s[start + i];
+        i++;
+    }
+    sub[i] = '\0';
+    return (sub);
 }
+
+int main()
+{
+    char const *string = "0123456789";
+    unsigned int start = 2;
+    
+    printf("%s\n", ft_substr(string, start, 6));
+    return (0);
+} */
+
+/* #include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+    char	*s3;
+    int		i;
+    int		a;
+    int		s1_len;
+    int		s2_len;
+
+    if (!s1 || !s2)
+        return (NULL);
+    i = 0;
+    a = 0;
+    s1_len = ft_strlen(s1);
+    s2_len = ft_strlen(s2);
+    s3 = (char *)malloc(sizeof(char) * (s1_len + s2_len + 1));
+    if (!s3)
+        return (NULL);
+    while (s1[i])
+        s3[a++] = s1[i++];
+    i = 0;
+    while (s2[i])
+        s3[a++] = s2[i++];
+    s3[a] = '\0';
+    return (s3);
+} */
