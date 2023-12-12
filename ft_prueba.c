@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:20:44 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/11 17:17:23 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/12 17:10:26 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,4 +251,121 @@ char	*ft_strjoin(char const *s1, char const *s2)
         s3[a++] = s2[i++];
     s3[a] = '\0';
     return (s3);
+} */
+
+/* #include "libft.h"
+#include <stdlib.h>
+
+static int	is_set(char c, const char *set)
+{
+    while (*set)
+    {
+        if (c == *set)
+            return (1);
+        set++;
+    }
+    return (0);
+}
+
+static int	first_position(char const *s1, const char *set)
+{
+    int	i;
+
+    i = 0;
+    while (s1[i] && is_set(s1[i], set))
+    {
+        i += 1;
+    }
+    return (i);
+}
+
+static int	last_position(char const *s1, const char *set)
+{
+    int	i;
+
+    i = ft_strlen(s1) - 1;
+    while (i >= 0 && is_set(s1[i], set))
+        i -= 1;
+    return (i);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+    char	*trim;
+    int		i;
+    int		len;
+    int		start;
+
+    if (!set)
+        return ((char *)s1);
+    if (s1 != NULL)
+    {
+        start = first_position(s1, set);
+        len = last_position(s1, set) - start + 1;
+        trim = (char *)malloc(sizeof(char) * (len + 1));
+        if (!trim)
+            return (NULL);
+        i = 0;
+        while (i < len)
+        {
+            trim[i] = s1[start + i];
+            i += 1;
+        }
+        trim[i] = '\0';
+        return (trim);
+    }
+    return (NULL);
+}
+
+int	main()
+{
+    char const *s1 = "    Hola como estas?    ";
+    char const *set = " ";
+
+    printf("%s\n", ft_strtrim(s1, set));
+    return (0);
+} */
+
+/* #include "libft.h"
+
+static int	ft_isset(char c, const char *set)
+{
+    while (*set)
+        if (*set++ == c)
+            return (1);
+    return (0);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+    const char		*start;
+    const char		*end;
+    char			*trim;
+    size_t			i;
+
+    if (!s1 || !set)
+        return (NULL);
+    start = s1;
+    end = s1 + ft_strlen(s1) - 1;
+    while (*start && ft_isset(*start, set))
+        start++;
+    while (end > start && ft_isset(*end, set))
+        end--;
+    trim = (char *)malloc(sizeof(char) * (end - start + 2));
+    if (!trim)
+        return (NULL);
+    i = 0;
+    while (start <= end)
+        trim[i++] = *start++;
+    trim[i] = '\0';
+    return (trim);
+}
+
+int	main()
+{
+    char const *s1 = "    Hola como estas?    ";
+    char const *set = " ";
+
+    printf("%s\n", ft_strtrim(s1, set));
+    return (0);
 } */

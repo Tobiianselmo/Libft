@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 15:29:21 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/11 17:16:16 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/12 11:04:50 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 /* int	main()
 {
-	char const *s1 = "Hola como";
-	char const *s2 = " estas?";
+	char const *s1 = "Hola";
+	char const *s2 = " buen dia";
 
 	printf("%s\n", ft_strjoin(s1, s2));
 	return (0);
