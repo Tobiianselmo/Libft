@@ -6,13 +6,13 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 11:12:00 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/12 17:10:51 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/13 18:21:56 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isset(char c, const char *set)
+static int	is_set(char c, const char *set)
 {
 	while (*set)
 		if (*set++ == c)
@@ -31,9 +31,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = s1;
 	end = s1 + ft_strlen(s1) - 1;
-	while (*start && ft_isset(*start, set))
+	while (*start && is_set(*start, set))
 		start++;
-	while (end > start && ft_isset(*end, set))
+	while (end > start && is_set(*end, set))
 		end--;
 	trim = (char *)malloc(sizeof(char) * (end - start + 2));
 	if (!trim)
@@ -47,8 +47,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 /* int	main()
 {
-	char const *s1 = "    Hola como estas?    ";
-	char const *set = " ";
+	char const *s1 = "bbbbbbhola como estasbbbbbbb";
+	char const *set = "b";
 
 	printf("%s\n", ft_strtrim(s1, set));
 	return (0);
