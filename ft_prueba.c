@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:20:44 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/13 16:44:27 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/14 15:14:13 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -369,6 +369,21 @@ int	main()
     printf("%s\n", ft_strtrim(s1, set));
     return (0);
 } */
+/* static int count_letters(char const *str, char c)
+{
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i++] != c)
+		count++;
+	return (count);
+} */
+
+//CONTAR LETRAS !!!!
 
 //contar palabras, para saber cuantos punteros necesito
 
@@ -380,4 +395,16 @@ int	main()
 
 //ese malloc se lo asigna a la primer posicion
 
+//podemos usar , strlen, substr 
+//
+//
+//Iterar sobre *str hasta encontrar delimitador para 
+//luego asignarle ese string(palabra) a matrix[0]
+//
+//
+//
+//
+//
+//
+//
 //
