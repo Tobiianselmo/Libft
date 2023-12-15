@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:49:16 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/14 17:56:27 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:56:30 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,23 @@
 
 static int	count_words(char const *str, char c)
 {
-	int	i;
 	int	count;
 
-	i = 0;
-	if (!str[i])
-		return (0);
-	if (str[i] != c)
-		count = 1;
-	else if (str[i] == c)
-		count = 0;
-	while (str[i])
+	count = 0;
+	while (*str)
 	{
-		if (str[i] == c && str[i + 1] != c && str[i + 1])
+		if (*str != c)
+		{
 			count++;
-		i++;
+			while (*str != '\0' && *str != c)
+			{
+				str++;
+			}
+		}
+		else
+		{
+			str++;
+		}
 	}
 	return (count);
 }
@@ -40,16 +42,54 @@ static char	*makestring(const char *str, int start, int len)
 
 	i = 0;
 	s = (char *)malloc(sizeof(char) * (len + 1));
-	while (!s)
+	if (!s)
 		return (0);
-	while (len--)
+	while (i < len)
 	{
-		s[i] = str[start];
+		s[i] = str[start + i];
 		i++;
-		start++;
 	}
 	s[i] = '\0';
 	return (s);
+}
+
+static int	check_matrix(char **matrix, int j)
+{
+	if (!matrix[j])
+	{
+		while (j >= 0)
+			free(matrix[j--]);
+		free(matrix);
+		return (0);
+	}
+	return (1);
+}
+
+static char	**str_to_matrix(char **matrix, char const *s, char c, int start)
+{
+	int	i;
+	int	j;
+	int	len;
+
+	i = 0;
+	j = 0;
+	len = ft_strlen(s);
+	while (i <= len)
+	{
+		if (s[i] != c && start == -1)
+			start = i;
+		else if ((s[i] == c || i == len) && start != -1)
+		{
+			matrix[j] = makestring(s, start, (i - start));
+			if (!check_matrix(matrix, j))
+				return (NULL);
+			j++;
+			start = -1;
+		}
+		i++;
+	}
+	matrix[j] = 0;
+	return (matrix);
 }
 
 char	**ft_split(char const *s, char c)
@@ -66,27 +106,14 @@ char	**ft_split(char const *s, char c)
 	start = -1;
 	matrix = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!matrix)
-		return (NULL);
-	while (i <= len)
-	{
-		if (s[i] != c && start == -1)
-			start = i;
-		else if ((s[i] == c || i == len) && start != -1)
-		{
-			matrix[j] = makestring(s, start, (i - start));
-			j++;
-			start = -1;
-		}
-		i++;
-	}
-	matrix[j] = 0;
-	return (matrix);
+		return (0);
+	return (str_to_matrix(matrix, s, c, start));
 }
 
 /* int	main()
 {
-	char	*s = "bbbHolabbbcomobbbestas?bbbaaaaa";
-	char c = 'b';
+	char	*s = " hola como estas? muy bien";
+	char c = ' ';
 	int		i;
 	char	**str;
 	
