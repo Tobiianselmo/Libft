@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:49:16 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/15 16:56:30 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/18 15:46:45 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,8 @@ char	**ft_split(char const *s, char c)
 	matrix = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!matrix)
 		return (0);
-	return (str_to_matrix(matrix, s, c, start));
+	str_to_matrix(matrix, s, c, start);
+	return (matrix);
 }
 
 /* int	main()

@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 15:16:15 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/18 17:08:34 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/18 17:40:53 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/18 18:36:57 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	char	*cdst;
-	char	*csrc;
+	int	i;
+	int	a;
 
-	cdst = (char *)dst;
-	csrc = (char *)src;
-	if (!cdst && !csrc)
-		return (dst);
-	while (n--)
+	i = 0;
+	a = 0;
+	if (s != NULL && f != NULL)
 	{
-		*cdst++ = *csrc++;
+		i = ft_strlen(s);
+		while (a < i)
+		{
+			f(a, s);
+			s++;
+			a++;
+		}
 	}
-	return (dst);
 }
 
-/* int	main()
+/* int main()
 {
-	char	s1[] = "";
-    char	s2[] = "";
-    printf("%s\n", s1);
-    ft_memcpy(s1, s2, 4);
-    printf("%s\n", s1);
-    return (0);
+	char str[] = "Hello World";
+	ft_striteri(str, );
+	return (0);
 } */

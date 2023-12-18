@@ -1,39 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 15:16:15 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/18 17:08:34 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/18 18:43:10 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/18 18:57:36 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*cdst;
-	char	*csrc;
+	int	a;
 
-	cdst = (char *)dst;
-	csrc = (char *)src;
-	if (!cdst && !csrc)
-		return (dst);
-	while (n--)
+	if (n == -2147483648)
 	{
-		*cdst++ = *csrc++;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (dst);
+	else if (n < 0)
+	{
+		n *= -1;
+		write(fd, "-", 1);
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd(n / 10, fd);
+	}
+	a = '0' + n % 10;
+	write(fd, &a, 1);
 }
 
-/* int	main()
+/* int	main(void)
 {
-	char	s1[] = "";
-    char	s2[] = "";
-    printf("%s\n", s1);
-    ft_memcpy(s1, s2, 4);
-    printf("%s\n", s1);
-    return (0);
+	ft_putnbr_fd(-214748368, 1);
+	return (0);
 } */

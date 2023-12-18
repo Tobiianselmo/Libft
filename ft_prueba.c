@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/30 12:20:44 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/14 15:14:13 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:57:39 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -400,11 +400,5 @@ int	main()
 //
 //Iterar sobre *str hasta encontrar delimitador para 
 //luego asignarle ese string(palabra) a matrix[0]
-//
-//
-//
-//
-//
-//
 //
 //

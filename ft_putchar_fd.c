@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 15:16:15 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/18 17:08:34 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/18 18:15:58 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/18 18:36:05 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	char	*cdst;
-	char	*csrc;
-
-	cdst = (char *)dst;
-	csrc = (char *)src;
-	if (!cdst && !csrc)
-		return (dst);
-	while (n--)
-	{
-		*cdst++ = *csrc++;
-	}
-	return (dst);
+	write(fd, &c, 1);
 }
 
-/* int	main()
+/* int main()
 {
-	char	s1[] = "";
-    char	s2[] = "";
-    printf("%s\n", s1);
-    ft_memcpy(s1, s2, 4);
-    printf("%s\n", s1);
-    return (0);
+	ft_putchar_fd('a', 1);
+	return (0);
 } */
