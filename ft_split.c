@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:49:16 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/18 15:46:45 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/19 14:15:36 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,6 @@ static int	count_words(char const *str, char c)
 		}
 	}
 	return (count);
-}
-
-static char	*makestring(const char *str, int start, int len)
-{
-	int		i;
-	char	*s;
-
-	i = 0;
-	s = (char *)malloc(sizeof(char) * (len + 1));
-	if (!s)
-		return (0);
-	while (i < len)
-	{
-		s[i] = str[start + i];
-		i++;
-	}
-	s[i] = '\0';
-	return (s);
 }
 
 static int	check_matrix(char **matrix, int j)
@@ -80,7 +62,7 @@ static char	**str_to_matrix(char **matrix, char const *s, char c, int start)
 			start = i;
 		else if ((s[i] == c || i == len) && start != -1)
 		{
-			matrix[j] = makestring(s, start, (i - start));
+			matrix[j] = ft_substr(s, start, (i - start));
 			if (!check_matrix(matrix, j))
 				return (NULL);
 			j++;
@@ -107,8 +89,7 @@ char	**ft_split(char const *s, char c)
 	matrix = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!matrix)
 		return (0);
-	str_to_matrix(matrix, s, c, start);
-	return (matrix);
+	return (str_to_matrix(matrix, s, c, start));
 }
 
 /* int	main()

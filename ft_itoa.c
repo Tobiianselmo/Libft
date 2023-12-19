@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 13:02:49 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/18 16:24:11 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/19 17:30:13 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,20 @@ char	*ft_itoa(int n)
 	int		i;
 	int		len;
 	char	*result;
+	int		j;
 
+	j = 0;
 	i = 0;
 	len = count_numbers(n);
 	if (n == -2147483648)
+	{
 		n += 1;
+		j = 1;
+	}
 	result = int_to_str(n, len, i);
 	if (!result)
 		return (NULL);
-	if (n == -2147483647)
+	if (j == 1)
 		result[len - 1] += 1;
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:30:25 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/18 17:59:48 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/19 17:38:54 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
-/* char transform(unsigned int index, char c)
+char transform(unsigned int index, char c)
 {
     index = 0;
 	if (c >= 'a' && c <= 'z')
@@ -59,4 +59,4 @@ int main() {
     result = ft_strmapi(original, &transform);
     printf("%s\n", result);
     return 0;
-} */
+}
