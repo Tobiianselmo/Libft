@@ -35,9 +35,18 @@ ft_striteri.c \
 ft_putchar_fd.c \
 ft_putstr_fd.c \
 ft_putendl_fd.c \
-ft_putnbr_fd.c 
+ft_putnbr_fd.c
+CFILES_BONUS = ft_lstnew.c \
+ft_lstadd_front.c \
+ft_lstsize.c \
+ft_lstlast.c \
+ft_lstadd_back.c \
+ft_lstdelone.c \
+ft_lstclear.c \
 
 OFILES = $(CFILES:.c=.o)
+
+OFILES_BONUS = $(CFILES_BONUS:.c=.o)
 
 NAME = libft.a
 
@@ -47,8 +56,11 @@ all: $(NAME)
 $(NAME): $(OFILES)
 	ar rcs $(NAME) $(OFILES)
 
+bonus:	$(OFILES_BONUS)
+		ar rcs $(NAME) $(OFILES_BONUS)
+
 clean:
-	rm -f $(OFILES)
+	rm -f $(OFILES) $(OFILES_BONUS)
 
 fclean: clean
 	rm -f $(NAME)

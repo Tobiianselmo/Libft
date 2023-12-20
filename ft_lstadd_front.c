@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 14:38:39 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/20 12:29:17 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/20 12:32:15 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/20 13:01:16 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	new->next = *lst;
+	*lst = new;
 }
-
-/* int main()
-{
-    int value = 10;
-
-    t_list *new = ft_lstnew(&value);
-    printf("El valor almacenado en el nodo es: %d\n", *((int *)new->content));
-    return (0);
-} */

@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 14:38:39 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/20 12:29:17 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/20 15:55:14 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/20 16:28:11 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*new;
+	t_list	*new_node;
 
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	new_node = *lst;
+	while (new_node->next != NULL)
+	{
+		new_node = new_node->next;
+	}
+	new_node->next = new;
 }
 
-/* int main()
+/* int	main()
 {
-    int value = 10;
-
-    t_list *new = ft_lstnew(&value);
-    printf("El valor almacenado en el nodo es: %d\n", *((int *)new->content));
-    return (0);
+	return (0)
 } */

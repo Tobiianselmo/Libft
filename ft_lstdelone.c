@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/19 14:38:39 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/20 12:29:17 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/20 16:36:40 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/20 17:32:42 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void *content)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*new;
-
-	new = (t_list *)malloc(sizeof(t_list));
-	if (!new)
-		return (NULL);
-	new->content = content;
-	new->next = NULL;
-	return (new);
+	if (lst != NULL && del != NULL)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
-
-/* int main()
-{
-    int value = 10;
-
-    t_list *new = ft_lstnew(&value);
-    printf("El valor almacenado en el nodo es: %d\n", *((int *)new->content));
-    return (0);
-} */
