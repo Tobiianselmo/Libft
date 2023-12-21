@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 15:15:38 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 12:42:22 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/21 16:17:25 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/21 16:17:27 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+t_list	*ft_lstnew(void *content)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-	}
-	return (c);
+	t_list	*new;
+
+	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new->content = content;
+	new->next = NULL;
+	return (new);
 }
 
 /* int main()
 {
-    char	c;
+    int value = 10;
 
-    c = 'a';
-    printf("%d", ft_toupper(c));
+    t_list *new = ft_lstnew(&value);
+    printf("El valor almacenado en el nodo es: %d\n", *((int *)new->content));
     return (0);
 } */

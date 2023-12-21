@@ -6,21 +6,11 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 16:30:25 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/20 11:44:07 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/21 12:46:11 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*new_str(int n)
-{
-	char	*str;
-
-	str = (char *)malloc(sizeof(char) * (n + 1));
-	if (!str)
-		return (NULL);
-	return (str);
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -30,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	str = new_str(ft_strlen(s));
+	str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -41,22 +31,21 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
-/* char transform(unsigned int index, char c)
+/* char lowertoupper(unsigned int i, char c)
 {
-    index = 0;
+	i = 0;
 	if (c >= 'a' && c <= 'z')
 	{
-    	return (c - 32);
-    }
-    return (c);
+		return (c - 32);
+	}
+	return (c);
 }
 
 int main() {
     char original[] = "Argentina";
     char *result;
 
-    printf("%s\n", original);
-    result = ft_strmapi(original, &transform);
+    result = ft_strmapi(original, &lowertoupper);
     printf("%s\n", result);
     return 0;
 } */

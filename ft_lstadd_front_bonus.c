@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 15:15:38 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 12:42:22 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/21 13:46:10 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/21 13:46:12 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c = c - 32;
-	}
-	return (c);
+	new->next = *lst;
+	*lst = new;
 }
-
-/* int main()
-{
-    char	c;
-
-    c = 'a';
-    printf("%d", ft_toupper(c));
-    return (0);
-} */

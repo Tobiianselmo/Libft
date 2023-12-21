@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/27 15:15:38 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 12:42:22 by tanselmo         ###   ########.fr       */
+/*   Created: 2023/12/21 13:45:07 by tanselmo          #+#    #+#             */
+/*   Updated: 2023/12/21 13:45:10 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+int	ft_lstsize(t_list *lst)
 {
-	if (c >= 'a' && c <= 'z')
+	t_list	*new;
+	int		size;
+
+	new = lst;
+	size = 0;
+	while (new != NULL)
 	{
-		c = c - 32;
+		size++;
+		new = new->next;
 	}
-	return (c);
+	return (size);
 }
 
 /* int main()
 {
-    char	c;
+	t_list *l;
+	int actual;
 
-    c = 'a';
-    printf("%d", ft_toupper(c));
-    return (0);
+	l = ft_lstnew(ft_strdup("1"));
+	l->next = ft_lstnew(ft_strdup("5"));
+	l->next = ft_lstnew(ft_strdup("10"));
+	actual = ft_lstsize(l);
+	printf("%d", actual);
 } */
