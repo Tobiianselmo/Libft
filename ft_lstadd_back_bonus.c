@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:46:43 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 13:46:44 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:02:40 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 	new_node->next = new;
 }
-
-/* int	main()
-{
-	return (0)
-} */

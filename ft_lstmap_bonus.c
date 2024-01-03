@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:45:22 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 17:39:31 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/22 14:06:28 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,39 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+
+/* void *multiply_by_2(void *content)
+{
+	int *value;
+
+	value = (int *)content;
+	*value *= 2;
+	return (content);
+}
+
+void delete(void *content)
+{
+	free(content);
+}
+
+int main()
+{
+    t_list *l = NULL;
+    t_list *actual;
+    int arr[] = {1, 2, 3, 4, 5, 0};
+    int i = 0;
+
+    while (arr[i])
+    {
+        t_list *new_node = ft_lstnew(&arr[i]);
+        ft_lstadd_back(&l, new_node);
+        i++;
+    }
+    actual = ft_lstmap(l, multiply_by_2, delete);
+    i = 0;
+    while (actual)
+    {
+        printf("\'%d\'\n", *(int*)actual->content);
+        actual = actual->next;
+    }
+} */

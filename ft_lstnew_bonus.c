@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 16:17:25 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 16:17:27 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:10:38 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ t_list	*ft_lstnew(void *content)
     int value = 10;
 
     t_list *new = ft_lstnew(&value);
-    printf("El valor almacenado en el nodo es: %d\n", *((int *)new->content));
+    printf("%d\n", *((int *)new->content));
     return (0);
 } */

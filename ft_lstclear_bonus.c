@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:45:57 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 13:46:00 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/22 17:31:56 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*tmp;
+	t_list	*node;
 
 	if (lst != NULL && del != NULL)
 	{
 		while (*lst != NULL)
 		{
-			tmp = (*lst)->next;
+			node = (*lst)->next;
 			ft_lstdelone(*lst, del);
-			*lst = tmp;
+			*lst = node;
 		}
 	}
 }

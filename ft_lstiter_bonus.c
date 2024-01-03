@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 13:45:42 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/21 16:37:32 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:03:06 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,3 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		}
 	}
 }
-
-/* int main()
-{
-	return (0);
-} */

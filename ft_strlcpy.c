@@ -6,7 +6,7 @@
 /*   By: tanselmo <tanselmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 15:15:56 by tanselmo          #+#    #+#             */
-/*   Updated: 2023/12/04 18:25:52 by tanselmo         ###   ########.fr       */
+/*   Updated: 2023/12/22 13:22:37 by tanselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	char	dst[] = "Holaaaaaaaaaaaa";
 	char	src[] = "Buen dia";
 
-	printf("la primera palabra %s, la segunda es %s\n", dst, src);
+	printf("%s, %s\n", dst, src);
 	printf("%zu\n", ft_strlcpy(dst, src, 6));
-	printf("la primera palabra %s, la segunda es %s\n", dst, src);
+	printf("%s, %s\n", dst, src);
 	return (0);
 } */
