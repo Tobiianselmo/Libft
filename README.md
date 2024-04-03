@@ -4,11 +4,17 @@
 
 ## Consideraciones técnicas
 • Declarar variables globales está prohibido.
+
 • Si necesitas separar una función compleja en varias, asegúrate de utilizar la palabra static para ello. De esta forma, las funciones se quedarán en el archivo apropiado.
+
 • Pon todos tus archivos en la raíz de tu repositorio.
+
 • Se prohibe entregar archivos no utilizados.
+
 • Todos los archivos .c deben compilarse con las flags -Wall -Werror -Wextra.
+
 • Debes utilizar el comando ar para generar la librería. El uso de libtool queda prohibido.
+
 • Tu libft.a tiene que ser creado en la raíz del repositorio.
 
 ## Parte 1 - Funciones de Libc
