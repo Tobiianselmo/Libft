@@ -20,12 +20,3 @@ int	ft_isdigit(int c)
 	}
 	return (0);
 }
-
-/* int main()
-{
-    char    c;
-
-	c = '0';
-    printf("%d", ft_isdigit(c));
-    return (0);
-} */

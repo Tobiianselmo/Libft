@@ -35,14 +35,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (NULL);
 }
-
-/* int	main()
-{
-	const char	*haystack;
-	const char	*needle;
-
-	haystack = "Hola como estas?";
-	needle = "como";
-	printf("%s\n", ft_strnstr(haystack, needle, 10));
-	return (0);
-} */

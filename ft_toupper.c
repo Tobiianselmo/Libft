@@ -20,12 +20,3 @@ int	ft_toupper(int c)
 	}
 	return (c);
 }
-
-/* int main()
-{
-    char	c;
-
-    c = 'a';
-    printf("%d", ft_toupper(c));
-    return (0);
-} */

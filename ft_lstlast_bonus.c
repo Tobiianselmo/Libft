@@ -25,15 +25,3 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (last);
 }
-
-/* int main()
-{
-	t_list *l;
-	t_list *actual;
-
-	l = ft_lstnew(ft_strdup("1"));
-	l->next = ft_lstnew(ft_strdup("5"));
-	l->next = ft_lstnew(ft_strdup("10"));
-	actual = ft_lstlast(l);
-	printf("%s\n", actual->content);
-} */

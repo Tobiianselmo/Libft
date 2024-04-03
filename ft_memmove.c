@@ -37,13 +37,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
-
-/* int	main()
-{
-    char	s1[] = "abcdefg";
-    char	s2[] = "1234567";
-    printf("%s\n%s\n", s1, s2);
-    ft_memmove(s1, s2, 4);
-    printf("%s\n%s\n", s1, s2);
-    return (0);
-} */

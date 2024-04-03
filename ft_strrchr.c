@@ -29,14 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)&s[i]);
 	return (NULL);
 }
-
-/* int	main()
-{
-	char	*s;
-	int	c;
-
-	s = "\0";
-	c = '\0';
-	printf("%s\n", ft_strrchr(s, c));
-	return (0);
-} */

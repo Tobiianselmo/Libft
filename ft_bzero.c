@@ -25,12 +25,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/* int	main()
-{
-	char	s[20] = "Hola";
-
-	printf("%p\n", ft_bzero(s, 3));
-	printf("%s\n", s);
-	return (0);
-} */

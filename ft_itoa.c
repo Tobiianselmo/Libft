@@ -79,12 +79,3 @@ char	*ft_itoa(int n)
 		result[len - 1] += 1;
 	return (result);
 }
-
-/* int	main ()
-{
-	int	n;
-
-	n = -2147483648;
-	printf("%s\n", ft_itoa(n));
-	return (0);
-} */

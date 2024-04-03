@@ -22,13 +22,3 @@ char	*ft_strdup(const char *s1)
 	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
 	return (str);
 }
-
-/* int main()
-{
-	char *s = "Hola buen dia!";
-	char *str;
-
-	str = ft_strdup(s);
-	printf("%s\n", str);
-	return (0);
-} */

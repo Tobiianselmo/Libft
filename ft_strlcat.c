@@ -36,12 +36,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (dst_len + src_len);
 }
-
-/* int	main()
-{
-	char	dst[] = "Holaaa";
-	char	src[] = "bien";
-	
-	printf("%zu\n", ft_strlcat(dst, src, 6));
-	return (0);
-} */

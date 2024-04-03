@@ -23,13 +23,3 @@ size_t	ft_strlen(const char *s)
 	}
 	return (i);
 }
-
-/* int	main()
-{
-
-    char	*s;
-    
-    s = "holaaaaa";
-    printf("%zu", ft_strlen(s));
-    return(0);
-} */

@@ -37,12 +37,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	s3[a++] = '\0';
 	return (s3);
 }
-
-/* int	main()
-{
-	char const *s1 = "Hola";
-	char const *s2 = " buen dia";
-
-	printf("%s\n", ft_strjoin(s1, s2));
-	return (0);
-} */

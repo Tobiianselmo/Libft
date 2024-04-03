@@ -91,20 +91,3 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	return (str_to_matrix(matrix, s, c, start));
 }
-
-/* int	main()
-{
-	char	*s = " hola como estas? muy bien";
-	char c = ' ';
-	int		i;
-	char	**str;
-	
-	i = 0;
-	str = ft_split(s, c);
-	while (i < count_words(s, c))
-	{
-		printf("%s\n", str[i]);
-		i++;
-	}
-	return (0);
-} */

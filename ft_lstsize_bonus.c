@@ -26,15 +26,3 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
-
-/* int main()
-{
-	t_list *l;
-	int actual;
-
-	l = ft_lstnew(ft_strdup("1"));
-	l->next = ft_lstnew(ft_strdup("5"));
-	l->next = ft_lstnew(ft_strdup("10"));
-	actual = ft_lstsize(l);
-	printf("%d", actual);
-} */

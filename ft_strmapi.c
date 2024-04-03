@@ -30,22 +30,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	*str = '\0';
 	return (result);
 }
-
-/* char lowertoupper(unsigned int i, char c)
-{
-	i = 0;
-	if (c >= 'a' && c <= 'z')
-	{
-		return (c - 32);
-	}
-	return (c);
-}
-
-int main() {
-    char original[] = "Argentina";
-    char *result;
-
-    result = ft_strmapi(original, &lowertoupper);
-    printf("%s\n", result);
-    return 0;
-} */

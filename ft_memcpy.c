@@ -27,13 +27,3 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	return (dst);
 }
-
-/* int	main()
-{
-	char	s1[] = "";
-    char	s2[] = "";
-    printf("%s\n", s1);
-    ft_memcpy(s1, s2, 4);
-    printf("%s\n", s1);
-    return (0);
-} */

@@ -32,14 +32,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-
-/* int	main()
-{
-	char	*s;
-	int	c;
-
-	s = "Hola buen dia!";
-	c = 'b';
-	printf("%s\n", ft_memchr(s, c, 5));
-	return (0);
-} */

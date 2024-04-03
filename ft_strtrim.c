@@ -44,12 +44,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trim[i] = '\0';
 	return (trim);
 }
-
-/* int	main()
-{
-	char const *s1 = "bbbbbbhola como estasbbbbbbb";
-	char const *set = "b";
-
-	printf("%s\n", ft_strtrim(s1, set));
-	return (0);
-} */

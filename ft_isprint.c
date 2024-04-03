@@ -20,12 +20,3 @@ int	ft_isprint(int c)
 	}
 	return (0);
 }
-
-/* int main()
-{
-	char	c;
-
-	c = 31;
-	printf("%d", ft_isprint(c));
-	return (0);	
-} */

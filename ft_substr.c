@@ -35,12 +35,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-
-/* int main()
-{
-	char const *string = "";
-	unsigned int start = 1;
-	
-	printf("%s\n", ft_substr(string, start, 1));
-	return (0);
-} */
