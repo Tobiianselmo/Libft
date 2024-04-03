@@ -1,6 +1,6 @@
 # Libft 📚
 
-## Primer proyecto en 42 Malaga. Tienes que crear una libreria que puedas usar en futuros proyectos
+## Tienes que crear una libreria que puedas usar en futuros proyectos
 
 ## Consideraciones técnicas
 • Declarar variables globales está prohibido.
