@@ -40,12 +40,3 @@ int	ft_atoi(const char *str)
 	result *= sign;
 	return (result);
 }
-
-/* int	main()
-{
-	char	*str;
-
-	str = "  -347652 hjg323";
-	printf("%d", ft_atoi(str));
-	return (0);
-} */
